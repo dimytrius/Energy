@@ -9,15 +9,7 @@ class App extends Component {
   componentWillMount(){
 
     // Initialize Firebase
-    var config = {
-        apiKey: "AIzaSyBskOWUVUPlEJs0PLCp-n_YansWi0ckYo4",
-        authDomain: "projeto-novo-d9b17.firebaseapp.com",
-        databaseURL: "https://projeto-novo-d9b17.firebaseio.com",
-        projectId: "projeto-novo-d9b17",
-        storageBucket: "projeto-novo-d9b17.appspot.com",
-        messagingSenderId: "944462740024"
-      };
-      firebase.initializeApp(config);
+   
   
   }
   
