@@ -7,8 +7,8 @@ import {
 
 const INITIAL_STATE = {
     nome: '',
-    email: 'suirtymid@gmail.com',
-    senha: 'codorna',
+    email: '',
+    senha: '',
     erroLogin: '',
 }
 

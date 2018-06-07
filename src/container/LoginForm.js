@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import { Button, FormGroup, FormControl, ControlLabel,input } from "react-bootstrap";
 import "./Login.css";
 import { connect } from 'react-redux';
 import { modificaEmail, modificaSenha, autenticarUsuario } from '../container/actions/AutenticacaoActions';
@@ -7,42 +6,44 @@ import { modificaEmail, modificaSenha, autenticarUsuario } from '../container/ac
 
 class LoginForm extends Component {
 
+  handleChange(e) {
+    
+    
+  }
   _autenticarUsuario() {
     const { email, senha } = this.props;
 
     this.props.autenticarUsuario({ email, senha });
+    console.log(this.props.email);
+    console.log(this.props.senha);
+    
+    
 }
 
   render() {
     return (
-      <div className="Login">
-        <form onSubmit={this.handleSubmit}>
-          <FormGroup controlId="email" bsSize="large">
-            <ControlLabel>Email</ControlLabel>
-            <input
-              autoFocus
-              type="email"
-              value={this.props.email}
-              onChange ={texto => this.props.modificaEmail(texto) } 
-            />
-          </FormGroup>
-          <FormGroup controlId="password" bsSize="large">
-            <ControlLabel>Password</ControlLabel>
-            <input
-              value={this.props.senha}
-              onChange={texto => this.props.modificaEmail(texto) } 
-              type="password"
-            />
-          </FormGroup>
-          <Button
-          onClick={() => this._autenticarUsuario()}
-            bsSize="large"
-            type="submit"
-          >
-            Login
-          </Button>
-        </form>
-      </div>
+      <div>
+                <h2>Login</h2>
+                <hr />
+                 
+                <label>First Name: </label>
+                <input type="text" type="email"
+                value={this.props.email}
+                onChange={(texto)=> this.props.modificaEmail(texto)} 
+                />
+                <br />
+ 
+                <label>Last Name: </label>
+                <input type="text"  
+                value={this.props.senha}
+                onChange={(texto)=> this.props.modificaEmail(texto)} 
+                type="password"/>
+                <br />
+ 
+                <input type="button" value="Submit" onClick={() => this._autenticarUsuario()} />
+ 
+                <hr />
+           </div>
     );
   }
 }

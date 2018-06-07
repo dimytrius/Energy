@@ -14,14 +14,17 @@ import {createStore, applyMiddleware} from 'redux';
 import ReduxThunk from 'redux-thunk';
 import reducers from './reducers/index'
 
+
 ReactDOM.render(
     <Provider store={createStore(reducers, {}, applyMiddleware(ReduxThunk))}>
     <Router history={hashHistory}>
         <Route path='/' component={App} >
-            <IndexRoute component={LoginForm} />
+            <IndexRoute component={Home} />
+            <Route path='/home' component={Home}/>
             <Route path='/releases' component={Releases} />
             <Route path='/graficos' component={Graficos} />
             <Route path='/mapa' component={Mapa}/>
+            <Route path='/login' component={LoginForm}/>
         </Route>
 
     </Router>
